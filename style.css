@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#home {
+    background-image: url(images/home.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+}
+
+#home header {
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+}
+
+#home header span {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#home header ul {
+    display: flex;
+    gap: 40px;
+}
+
+#home header ul li {
+    font-size: 18px;
+}
+
+#home header ul li a {
+    padding: 43.5px 20px;
+}
+
+#home section {
+    padding-left: 25%;
+}
+
+#home section .title1 {
+    font-weight: bold;
+    font-size: 64px;
+    padding-top: 200px;
+    line-height: 1.2em;
+    padding-bottom: 1.6rem;
+    border-bottom: 3px solid white;
+}
+
+#home section .title2 {
+    font-weight: 600;
+    font-size: 26px;
+    padding-top: 1.2em;
+}
+
+#home .scroll {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    padding-top: 260px;
+}
+
+#AboutSkills {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /* background-color: pink; */
+    margin: 0 auto;
+}
+
+#AboutSkills h1 {
+    text-align: center;
+    padding-top: 90px;
+    font-weight: bold;
+    font-size: 64px;
+}
+
+#AboutSkills .skills {
+    margin-top: 86px;
+}
+
+#AboutSkills .skills>div {
+    position: absolute;
+    left: calc(50% - 304.5px);
+
+}
+
+#AboutSkills .skills a {
+    position: absolute;
+    left: calc(50% - 140px);
+    top: 410px;
+}
+
+#AboutSkills .skills .skills-text {
+    display: block;
+    position: absolute;
+}
+
+#AboutSkills .skills .skills-text h4 {
+    font-size: 24px;
+    padding-bottom: 1rem;
+}
+
+#AboutSkills .skills .skills-text:nth-child(even) h4 {
+    font-size: 24px;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: end;
+}
+
+#AboutSkills .skills .skills-text:nth-of-type(1) {
+    top: 0px;
+    left: -290px;
+}
+
+#AboutSkills .skills .skills-text:nth-of-type(2) {
+    top: 0px;
+    right: -260px;
+}
+
+#AboutSkills .skills .skills-text:nth-of-type(3) {
+    top: 230px;
+    left: -326px;
+}
+
+#AboutSkills .skills .skills-text:nth-of-type(4) {
+    top: 230px;
+    right: -397px;
+}
+
+#AboutSkills .skills .skills-text:nth-of-type(5) {
+    top: 470px;
+    left: -290px;
+}
+
+#AboutSkills .skills .skills-text:nth-of-type(6) {
+    right: -152px;
+    top: 470px;
+}
+
+#works {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    text-align: center;
+}
+
+#works h1 {
+    font-weight: bold;
+    font-size: 64px;
+    padding-top: 90px;
+    color: white;
+}
+
+#works .card {
+    width: 364px;
+    height: 500px;
+    border-radius: 15px;
+    border: 1px solid red;
+    position: relative;
+}
+
+#works .card-img {
+    width: 364px;
+    height: 334px;
+    background-image: url(images/home.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+}
+
+#works .card-text {
+    background-color: white;
+    height: 187px;
+    width: 364px;
+    border-radius: 20px 20px 15px 15px;
+    background-color: white;
+    position: absolute;
+    top: 310px;
+}
+
+#contact {
+    width: 100vw;
+    height: 400px;
+    background-color: #2B2B2B;
+    color: white;
+    text-align: center;
+}
+
+#contact h2 {
+    padding-top: 70px;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+#contact p {
+    font-size: 24px;
+    padding-top: 24px;
+}
+
+#contact .icon {
+    padding-top: 40px;
+}
+
+#contact .icon img {
+    padding-right: 19px;
+}
+
+#contact .icon img:nth-child(1) {
+    padding-right: 15px;
+}
+
+#contact .icon img:nth-child(3) {
+    vertical-align: 5px;
+}
