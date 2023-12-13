@@ -53,6 +53,16 @@ ul {
     padding: 43.5px 20px;
 }
 
+#home header .icon a img {
+    padding-right: 15px;
+}
+#home header .icon a:nth-child(1) img {
+    padding-right: 16px;    
+}
+#home header .icon a:nth-child(2) img {
+    vertical-align: 4px;
+}
+
 #home section {
     padding-left: 25%;
 }
@@ -254,13 +264,14 @@ ul {
 }
 
 #contact .icon img {
-    padding-right: 19px;
+    padding-right: 15px;
 }
 
-#contact .icon img:nth-child(1) {
-    padding-right: 15px;
+#contact .icon a:nth-child(1) img {
+    padding-right: 11px;
 }
 
 #contact .icon a:nth-child(3) img {
     vertical-align: 5px;
+    padding-right: 14px;
 }
