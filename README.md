@@ -1,4 +1,4 @@
-# portfolio-23.11.28
+# portfolio
 
 figma 시안주소
 https://www.figma.com/file/6IyfysSbQuMiOGxLgNT5NT/Untitled?type=design&node-id=0%3A1&mode=design&t=KqemXebTpfTIN6pR-1
