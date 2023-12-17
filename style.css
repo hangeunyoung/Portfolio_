@@ -31,6 +31,7 @@ ul {
 
 #home {
     background-image: url(images/home.jpg);
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -44,7 +45,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 70px;
+    padding: 0 120px;
 }
 
 #home header span {
@@ -101,29 +102,60 @@ ul {
     justify-content: center;
     padding: 10px;
     margin-top: 260px;
+    animation:mouse_move 1s backwards alternate infinite;
+}
+
+@keyframes mouse_move {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-40px);}
 }
 
 #AboutSkills {
     position: relative;
-    height: 200vh;
+    height: 100vh;
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
-
 }
 
 #AboutSkills h1 {
     text-align: center;
     padding-top: 90px;
     font-weight: bold;
-    font-size: 64px;
+    font-size: 64px;    
+}
+
+/* 이미지 클릭시 skills 왼쪽으로 이동 */
+#AboutSkills h1.active {
+    animation:skills_move 1s;
+    -webkit-animation-fill-mode:both
 }
 
 #AboutSkills .skills {
-    margin-top: 86px;
+    margin-top: 86px;    
 }
 
-#AboutSkills .skills>div {
+#AboutSkills .skills.active {
+    animation:skills_move 1s;
+    /* 애니메이션 끝난 위치에 멈춰있는 속성 */
+    -webkit-animation-fill-mode:both
+}
+
+#AboutSkills .skills.active .click {
+    position: absolute;
+    left: calc(50% - 140px);
+    top: 140px;
+}
+#AboutSkills .skills.active .skills-img .skills-text {
+    display: none;
+}
+
+@keyframes skills_move {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-400px);}
+}
+
+#AboutSkills .skills .skills-img {
     position: absolute;
     left: calc(50% - 304.5px);
 
@@ -136,8 +168,10 @@ ul {
 }
 
 #AboutSkills .skills .skills-text {
-    display: block;
     position: absolute;
+}
+#AboutSkills .skills .skills-text.remove {
+    display: none;
 }
 
 #AboutSkills .skills .skills-text h4 {
@@ -188,6 +222,11 @@ ul {
     background-color: #2B2B2B;
     border-radius: 50%;
 }
+#AboutSkills .skills .click:hover {
+    transform: scale(2);
+    transition: all 0.5s;
+    cursor: pointer;
+}
 
 /* 진동효과 */
 #AboutSkills .skills .vibration {
@@ -218,10 +257,26 @@ ul {
 
 #AboutSkills .about {
     position: absolute;
-    bottom: 0;
-    width: 446px;
-    height: 631px;
-    background-image: url(images/memo.png);
+    bottom: 80px;
+    left: calc(50% - 230px);
+    width: 468px;
+    height: 660px;
+    background-image: url(images/memo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+}
+
+/* 이미지 클릭시 about 오른쪽으로 이동 */
+#AboutSkills .about.show {
+    display: block;
+    animation:about_move 1s;
+    -webkit-animation-fill-mode:both
+}
+
+@keyframes about_move {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(400px);}
 }
 
 #AboutSkills .about .infor-box {
@@ -229,28 +284,43 @@ ul {
     margin-left: 60px;
     padding-top: 220px;
 }
+
 #AboutSkills .about .infor-box .infor {
     font-size: 20px;
     text-align: center;
 }
+
 #AboutSkills .about .infor-box .infor h3 {
     padding-bottom: 8px;
 }
+
 #AboutSkills .about .infor-box .answer {
+    font-size: 17px;
     padding-top: 7px;
     padding-left: 15px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
 }
+
 #AboutSkills .about .infor-box .answer p {
-    padding-bottom: 16px;
+    padding-bottom: 15.5px;
 }
+
+#AboutSkills .about .infor-box .answer p:nth-child(2) {
+    padding-bottom: 17px;
+}
+
 #AboutSkills .about .about-text {
     margin-left: 60px;
     padding-top: 30px;
+    line-height: 2em;
 }
-
+#AboutSkills .about .btn-close {
+    position: absolute;
+    top: -62PX;
+    right: 10px;
+}
 
 #works {
     width: 100%;

@@ -11,3 +11,10 @@
     3. 오른쪽으로 메모지 나타남
     4. 오른쪽 닫기 버튼 누르면 원래되로 돌아옴
  */
+
+    document.querySelector('#AboutSkills .click').addEventListener('click',function(){
+        // alert('hi');
+        document.querySelectorAll('#AboutSkills .skills .skills-img .skills-text').classList.add('reomve');
+        document.querySelector('#AboutSkills skills').classList.add('active');
+        document.querySelector('#AboutSkills .about').classList.add('show');
+    });
