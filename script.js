@@ -12,12 +12,24 @@
     4. 오른쪽 닫기 버튼 누르면 원래되로 돌아옴
  */
 
-document.querySelector('#AboutSkills .click').addEventListener('click', function () {
-    // alert('hi');
-    document.querySelectorAll('#AboutSkills .skills .skills-img .skills-text').classList.add('reomve');
-    document.querySelector('#AboutSkills skills').classList.add('active');
+// Skills 이미지 클릭시 About 나타남
+const click = document.querySelector('#AboutSkills .click');
+
+click.addEventListener('click', function () {
+    console.log('click');
+    document.querySelector('#AboutSkills h1').classList.add('active')
+    document.querySelector('#AboutSkills .skills').classList.add('active');    
     document.querySelector('#AboutSkills .about').classList.add('show');
 });
+
+const btn_close = document.querySelector('#AboutSkills .about .btn-close');
+
+btn_close.addEventListener('click',function(){
+    console.log('x');
+    document.querySelector('#AboutSkills h1').classList.remove('active')
+    document.querySelector('#AboutSkills .skills').classList.remove('active');    
+    document.querySelector('#AboutSkills .about').classList.remove('show');
+})
 
 
 // // work slider

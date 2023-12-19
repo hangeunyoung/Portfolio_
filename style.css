@@ -275,8 +275,18 @@ ul {
 }
 
 @keyframes about_move {
-    0% {transform: translateX(0);}
-    100% {transform: translateX(400px);}
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    20% {
+        transform: translateX(80px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(400px);
+        opacity: 1;
+    }
 }
 
 #AboutSkills .about .infor-box {
