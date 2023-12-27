@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    overflow-y: overlay;
+    /* overflow-y: overlay; */
+    overflow: hidden;
 }
 
 a {
@@ -19,19 +19,9 @@ ul {
     list-style-type: none;
 }
 
-/* 스크롤 스냅 */
-.scroll-container {
-    scroll-snap-type: y mandatory;
-    overflow: auto;
-}
-
-.scroll-area {
-    scroll-snap-align: start;
-}
-
-#home {
+#page-1 {
     background-image: url(images/home.jpg);
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -40,7 +30,7 @@ ul {
     overflow: hidden;
 }
 
-#home header {
+#page-1 header {
     height: 110px;
     display: flex;
     justify-content: space-between;
@@ -48,41 +38,41 @@ ul {
     padding: 0 120px;
 }
 
-#home header span {
+#page-1 header span {
     font-size: 28px;
     font-weight: bold;
 }
 
-#home header ul {
+#page-1 header ul {
     display: flex;
     gap: 40px;
 }
 
-#home header ul li {
+#page-1 header ul li {
     font-size: 18px;
 }
 
-#home header ul li a {
+#page-1 header ul li a {
     padding: 43.5px 20px;
 }
 
-#home header .icon a img {
+#page-1 header .icon a img {
     padding-right: 15px;
 }
 
-#home header .icon a:nth-child(1) img {
+#page-1 header .icon a:nth-child(1) img {
     padding-right: 16px;
 }
 
-#home header .icon a:nth-child(2) img {
+#page-1 header .icon a:nth-child(2) img {
     vertical-align: 4px;
 }
 
-#home section {
+#page-1 section {
     padding-left: 25%;
 }
 
-#home section .title1 {
+#page-1 section .title1 {
     font-weight: bold;
     font-size: 64px;
     padding-top: 200px;
@@ -91,26 +81,31 @@ ul {
     border-bottom: 3px solid white;
 }
 
-#home section .title2 {
+#page-1 section .title2 {
     font-weight: 600;
     font-size: 26px;
     padding-top: 1.2em;
 }
 
-#home #btn-down {
+#page-1 #btn-down {
     display: flex;
     justify-content: center;
     padding: 10px;
     margin-top: 260px;
-    animation:mouse_move 1s backwards alternate infinite;
+    animation: mouse_move 1s backwards alternate infinite;
 }
 
 @keyframes mouse_move {
-    0% {transform: translateY(0);}
-    100% {transform: translateY(-40px);}
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-40px);
+    }
 }
 
-#AboutSkills {
+#page-2 {
     position: relative;
     height: 100vh;
     width: 100%;
@@ -118,136 +113,161 @@ ul {
     overflow: hidden;
 }
 
-#AboutSkills h1 {
+#page-2 h1 {
     text-align: center;
     padding-top: 90px;
     font-weight: bold;
-    font-size: 64px;    
+    font-size: 64px;
 }
 
 /* 이미지 클릭시 skills 왼쪽으로 이동 */
-#AboutSkills h1.active {
-    animation:skills_move 1s;
-    -webkit-animation-fill-mode:both
+#page-2 h1.active {
+    animation: skills_move 1s;
+    -webkit-animation-fill-mode: both;
 }
 
-#AboutSkills .skills {
-    margin-top: 86px;    
+#page-2 .skills {
+    margin-top: 86px;
 }
 
-#AboutSkills .skills.active {
-    animation:skills_move 1s;
+#page-2 .skills.active {
+    animation: skills_move 1s;
     /* 애니메이션 끝난 위치에 멈춰있는 속성 */
-    -webkit-animation-fill-mode:both
+    -webkit-animation-fill-mode: both;
 }
 
-#AboutSkills .skills.active .click {
+#page-2 .skills.active .click {
     position: absolute;
     left: calc(50% - 140px);
     top: 140px;
 }
-#AboutSkills .skills.active .skills-img .skills-text {
+
+#page-2 .skills.active .skills-img .skills-text {
     display: none;
 }
 
 @keyframes skills_move {
-    0% {transform: translateX(0);}
-    100% {transform: translateX(-400px);}
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-400px);
+    }
 }
 
-#AboutSkills .skills .skills-img {
+#page-2 .skills .skills-img {
     position: absolute;
     left: calc(50% - 304.5px);
 
 }
 
-#AboutSkills .skills .click {
+#page-2 .skills .click {
     position: absolute;
     left: calc(50% - 140px);
     top: 410px;
 }
 
-#AboutSkills .skills .skills-text {
+#page-2 .skills .skills-text {
     position: absolute;
 }
-#AboutSkills .skills .skills-text.remove {
+
+#page-2 .skills .skills-text.remove {
     display: none;
 }
 
-#AboutSkills .skills .skills-text h4 {
+#page-2 .skills .skills-text h4 {
     font-size: 24px;
     padding-bottom: 1rem;
 }
 
-#AboutSkills .skills .skills-text:nth-child(even) h4 {
+#page-2 .skills .skills-text:nth-child(even) h4 {
     font-size: 24px;
     padding-bottom: 1rem;
     display: flex;
     justify-content: end;
 }
 
-#AboutSkills .skills .skills-text:nth-of-type(1) {
+#page-2 .skills .skills-text:nth-of-type(1) {
     top: 0px;
     left: -290px;
 }
 
-#AboutSkills .skills .skills-text:nth-of-type(2) {
+#page-2 .skills .skills-text:nth-of-type(2) {
     top: 0px;
     right: -260px;
 }
 
-#AboutSkills .skills .skills-text:nth-of-type(3) {
+#page-2 .skills .skills-text:nth-of-type(3) {
     top: 230px;
     left: -326px;
 }
 
-#AboutSkills .skills .skills-text:nth-of-type(4) {
+#page-2 .skills .skills-text:nth-of-type(4) {
     top: 230px;
     right: -397px;
 }
 
-#AboutSkills .skills .skills-text:nth-of-type(5) {
+#page-2 .skills .skills-text:nth-of-type(5) {
     top: 470px;
     left: -290px;
 }
 
-#AboutSkills .skills .skills-text:nth-of-type(6) {
-    right: -152px;
+#page-2 .skills .skills-text:nth-of-type(6) {
+    right: -232px;
     top: 470px;
 }
 
-#AboutSkills .skills .click {
+#page-2 .skills .click {
     width: 280px;
     height: 280px;
     background-color: #2B2B2B;
     border-radius: 50%;
 }
-#AboutSkills .skills .click:hover {
+
+#page-2 .skills .click:hover {
     transform: scale(2);
     transition: all 0.5s;
     cursor: pointer;
 }
 
 /* 진동효과 */
-#AboutSkills .skills .vibration {
+#page-2 .skills .vibration {
     animation: vibration 0.1s infinite;
 }
 
 @keyframes vibration {
     from {
-        transform: rotate(1deg);
+        transform: rotate(2deg);
     }
 
     to {
-        transform: rotate(-1deg);
+        transform: rotate(-2deg);
     }
 }
 
-#AboutSkills .skills .click img {
+/* @keyframes vibration2 {
+    0% {
+        transform: rotate(3deg);
+        scale: 1;
+    }
+
+    50% {
+        transform: rotate(0deg);
+        scale: 1.5;
+    }
+
+    100% {
+        transform: rotate(-3deg);
+        scale: 2;
+    }
+} */
+
+#page-2 .skills .click img {
     width: 100%;
 }
 
-#AboutSkills .skills .click p {
+#page-2 .skills .click p {
     position: absolute;
     bottom: 11px;
     left: calc(50% - 32px);
@@ -255,7 +275,7 @@ ul {
     font-size: 24px;
 }
 
-#AboutSkills .about {
+#page-2 .about {
     position: absolute;
     bottom: 80px;
     left: calc(50% - 230px);
@@ -268,10 +288,10 @@ ul {
 }
 
 /* 이미지 클릭시 about 오른쪽으로 이동 */
-#AboutSkills .about.show {
+#page-2 .about.show {
     display: block;
-    animation:about_move 1s;
-    -webkit-animation-fill-mode:both
+    animation: about_move 1s;
+    -webkit-animation-fill-mode: both;
 }
 
 @keyframes about_move {
@@ -279,32 +299,36 @@ ul {
         transform: translateX(0);
         opacity: 0;
     }
+
     20% {
         transform: translateX(80px);
         opacity: 0;
+        scale: 0.5;
     }
+
     100% {
         transform: translateX(400px);
         opacity: 1;
+        scale: 1;
     }
 }
 
-#AboutSkills .about .infor-box {
+#page-2 .about .infor-box {
     display: flex;
     margin-left: 60px;
     padding-top: 220px;
 }
 
-#AboutSkills .about .infor-box .infor {
+#page-2 .about .infor-box .infor {
     font-size: 20px;
     text-align: center;
 }
 
-#AboutSkills .about .infor-box .infor h3 {
+#page-2 .about .infor-box .infor h3 {
     padding-bottom: 8px;
 }
 
-#AboutSkills .about .infor-box .answer {
+#page-2 .about .infor-box .answer {
     font-size: 17px;
     padding-top: 7px;
     padding-left: 15px;
@@ -313,34 +337,35 @@ ul {
     /* justify-content: center; */
 }
 
-#AboutSkills .about .infor-box .answer p {
+#page-2 .about .infor-box .answer p {
     padding-bottom: 15.5px;
 }
 
-#AboutSkills .about .infor-box .answer p:nth-child(2) {
+#page-2 .about .infor-box .answer p:nth-child(2) {
     padding-bottom: 17px;
 }
 
-#AboutSkills .about .about-text {
+#page-2 .about .about-text {
     margin-left: 60px;
     padding-top: 30px;
     line-height: 2em;
 }
-#AboutSkills .about .btn-close {
+
+#page-2 .about .btn-close {
     position: absolute;
     top: -62PX;
     right: 10px;
 }
 
-#works {
+#page-3 {
     width: 100%;
     height: 100vh;
     background-color: black;
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
-#works h1 {
+#page-3 h1 {
     font-weight: bold;
     font-size: 64px;
     padding: 90px 0 54px;
@@ -348,11 +373,11 @@ ul {
     text-align: center;
 }
 
-#works .cards {
+#page-3 .sliders {
     display: flex;
 }
 
-#works .card {
+#page-3 .slide {
     width: 364px;
     height: 500px;
     border-radius: 15px;
@@ -360,37 +385,38 @@ ul {
     margin: 0 auto;
 }
 
-/* #works .card:nth-child(2) {
+/* #page-3 .card:nth-child(2) {
     width: 460px;
     height: 580px;
 } */
 
-#works .card-img {
+#page-3 .card-img {
     width: 364px;
     height: 334px;
-    background-image: url(images/home.jpg);
+    background-image: url(images/bg/06c2a191076519.5e2849029c6d5.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     border-radius: 15px 15px 0 0;
 }
 
-#works .cards .card:nth-child(1) .card-img {
-    background-image: url(images/bg/06c2a191076519.5e2849029c6d5.jpg);
+#page-3 .sliders .slide:nth-child(1) .card-img {
+    background-image: url(images/신영자산운용main.png);
     /* margin-top: 49px; */
 }
 
-#works .cards .card:nth-child(2) .card-img {
-    background-image: url(images/home.jpg);
+#page-3 .sliders .slide:nth-child(2) .card-img {
+    background-image: url(images/땅콩마켓.png);
     /* width: 460px;
     height: 455px; */
 }
 
-#works .cards .card:nth-child(3) .card-img {
-    background-image: url(images/bg/832222130607633.6183b9717d21d.jpg);
+#page-3 .sliders .slide:nth-child(3) .card-img {
+    background-image: url(images/모바일\ 청첩장.png);
     /* margin-top: 49px; */
 }
 
-#works .card-text {
+#page-3 .card-text {
     height: 187px;
     width: 364px;
     border-radius: 20px 20px 15px 15px;
@@ -400,68 +426,143 @@ ul {
     top: 310px;
 }
 
-/* #works .cards .card:nth-child(2) .card-text {
+#page-3 .card-text p {
+    padding-top: 10px;
+}
+
+#page-3 .slide .card-hover {
+    padding-top: 15px;
+    display: none;
+}
+
+#page-3 .slide .card-hover p {
+    margin-bottom: 30px;
+}
+
+#page-3 .slide .card-hover a {
+    margin-right: 20px;
+}
+
+.btn {
+    background-color: #dfdfdf;
+    border-radius: 15px;
+    color: #000;
+    width: 110px;
+    height: 46px;
+    padding: 8px 18px;
+    border: 1px solid rgb(124, 124, 124);
+}
+
+#page-3 .slide:hover .card-text {
+    height: 300px;
+    position: absolute;
+    top: 40%;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+#page-3 .slide:hover .card-text .card-hover {
+    display: block;
+}
+
+/* #page-3 .sliders .card:nth-child(2) .card-text {
     width: 460px;
 } */
-#works h2 {
+#page-3 h2 {
     font-size: 24px;
     color: black;
 }
 
-#works p {
+#page-3 p {
     color: rgb(53, 53, 53);
 }
 
-#works button {
+#page-3 button {
     border: none;
     background-color: transparent;
     width: 57px;
     height: 57px;
 }
 
-#works .btn-prev {
+#page-3 .btn-prev {
     position: absolute;
     top: calc(50% - 28.5px);
     left: 40px;
 }
-#works .btn-next {
+
+#page-3 .btn-next {
     position: absolute;
     top: calc(50% - 28.5px);
     right: 40px;
 }
 
-#contact {
+#page-3 .work-text {
+    position: absolute;
+    width: 100%;
+    height: 5000px;
+    object-fit: cover;
+}
+
+#page-4 {
     width: 100%;
     height: 400px;
     background-color: #2B2B2B;
     color: white;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#contact h2 {
+#page-4 h2 {
     padding-top: 70px;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 50px;
 }
 
-#contact p {
+#page-4 p {
     font-size: 24px;
     padding-top: 24px;
 }
 
-#contact .icon {
+#page-4 .icon {
     padding-top: 40px;
 }
 
-#contact .icon img {
+#page-4 .icon img {
     padding-right: 15px;
 }
 
-#contact .icon a:nth-child(1) img {
+#page-4 .icon a:nth-child(1) img {
     padding-right: 11px;
 }
 
-#contact .icon a:nth-child(3) img {
+#page-4 .icon a:nth-child(3) img {
     vertical-align: 5px;
     padding-right: 14px;
 }
+
+
+/* .fade-right { transition: all 0.3s; }
+.fade-right.start {
+    transform: translateX(-1000px);
+    opacity: 0;
+
+}
+
+.fade-right.end {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.fade-left { transition: all 0.3s; }
+.fade-left.start {
+    transform: translateX(1000px);
+    opacity: 0;
+
+}
+
+.fade-left.end {
+    transform: translateX(0);
+    opacity: 1;
+} */

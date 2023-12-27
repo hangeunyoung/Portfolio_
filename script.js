@@ -1,105 +1,49 @@
-// $("#btn_top").click(function () {  // 버튼 클릭 시
-//     $('html,body').scrollTop(0);  // 스크롤탑이 '0'이 된다는 - 스크롤이 제일 위로 올라간다는 의미
-// });
-// document.querySelector('#btn-down').addEventListener('click', function(){
-//     document.querySelector('html,body').scrollHeight('2000vh');
-// })
+// pageable
+const pages = new Pageable("#container");
 
-/* 
-    1. 그림을 눌렀을 때 동작
-    2. skills-text 사라짐 / skills 왼쪽으로 이동 
-    3. 오른쪽으로 메모지 나타남
-    4. 오른쪽 닫기 버튼 누르면 원래되로 돌아옴
- */
+// pages.on("scroll", data => {
+//     // do something during scroll
+//     console.log(data.index)
+//     // 2번쨰 페이지(index 1) 들어왔을 때
+//     if(data.index == 1) {
+//         // const fadeR = document.querySelectorAll('.fade-right');
+//         // const fadeL = document.querySelectorAll('.fade-left');
+//         // fadeR.forEach(function(){
+//         //     this.classList.add('end');
+//         // });
+//         document.querySelectorAll('.fade-right')[1].classList.add('end');
+//         document.querySelectorAll('.fade-left')[1].classList.add('end');        
+//     }
+// });
+
 
 // Skills 이미지 클릭시 About 나타남
-const click = document.querySelector('#AboutSkills .click');
+const clickEl = document.querySelector('#page-2 .click');
 
-click.addEventListener('click', function () {
+clickEl.addEventListener('click', function () {
     console.log('click');
-    document.querySelector('#AboutSkills h1').classList.add('active')
-    document.querySelector('#AboutSkills .skills').classList.add('active');    
-    document.querySelector('#AboutSkills .about').classList.add('show');
+    document.querySelector('#page-2 h1').classList.add('active')
+    document.querySelector('#page-2 .skills').classList.add('active');    
+    document.querySelector('#page-2 .about').classList.add('show');
+    document.querySelector('#page-2 .skills .click img').classList.remove('vibration');
 });
 
-const btn_close = document.querySelector('#AboutSkills .about .btn-close');
+const btn_close = document.querySelector('#page-2 .about .btn-close');
 
 btn_close.addEventListener('click',function(){
     console.log('x');
-    document.querySelector('#AboutSkills h1').classList.remove('active')
-    document.querySelector('#AboutSkills .skills').classList.remove('active');    
-    document.querySelector('#AboutSkills .about').classList.remove('show');
-})
+    document.querySelector('#page-2 h1').classList.remove('active')
+    document.querySelector('#page-2 .skills').classList.remove('active');    
+    document.querySelector('#page-2 .about').classList.remove('show');
+    document.querySelector('#page-2 .skills .click img').classList.add('vibration');
+});
 
 
-// // work slider
 
-// // slider 문서객체
-// const slider = document.querySelector('.slider');
-// const cards = document.querySelector('.cards');
-// // pager 버튼
-// const btnPrev = document.querySelector('.btn-prev');
-// const btnNext = document.querySelector('.btn-next');
+// 여백 강제로 뺌
+document.querySelector('.pg-wrapper').style.paddingRight = '0';
 
-// // 슬라이더 요소
-// const slides = document.querySelectorAll('.cards > .card')
-// const slideLength = slides.length;  // 이미지 장수
-// let imgNum = 0; // 이미지 번호
+window.addEventListener('resize', function(){
 
-// console.log(slides.length)
-
-// function changeSlide(num) {
-//     slides.forEach(function (card) {
-//         card.classList.remove('prev', 'next', 'current') // 전체 클래스 초기화
-//     })
-
-//     // 현재 슬라이드
-//     const curImg = slides[num];
-//     curImg.classList.remove('prev', 'next', 'current') // 기존 클래스 초기화
-//     curImg.classList.add('current') // 현재 슬라이드 설정
-
-//     // 이전 슬라이드(현재 슬라이드 기준)
-//     const preImg = (num == 0) ? slides[slideLength - 1] : slides[num - 1];
-//     preImg.classList.remove('prev', 'next', 'current')
-//     preImg.classList.add('prev')
-
-//     // 다음 슬라이드(현재 슬라이드 기준)
-//     const nextImg = slides[(num + 1) % slideLength];
-//     nextImg.classList.remove('prev', 'next', 'current')
-//     nextImg.classList.add('next')
-
-//     // card 콘텐츠 높이 만큼 sliders의 높이값 갱신
-//     cards.style.height = document.querySelector('.slider .current').offsetHeight + 'px';
-//     console.log(cards.style.height);
-// }
-
-
-// window.onload = function () {
-//     // 슬라이더 시작
-//     changeSlide(0)
-// }
-
-// // 이벤트
-// btnNext.addEventListener('click', function () {
-//     imgNum++;
-//     if (imgNum >= slides.length) {
-//         imgNum = 0;
-//     }
-//     changeSlide(imgNum);
-//     console.log('imgNum = ', imgNum);
-// })
-
-// btnPrev.addEventListener('click', function () {
-//     imgNum--;
-//     if (imgNum < 0) {
-//         imgNum = slideLength - 1;
-//     }
-//     changeSlide(imgNum);
-//     console.log('imgNum = ', imgNum);
-// })
-
-// // 윈도우 크기 변경시 슬라이드 높이 갱신
-// window.addEventListener('resize', function () {
-//     // card 콘텐츠 높이 만큼 sliders의 높이값 갱신
-//     cards.style.height = document.querySelector('.slider .current').offsetHeight + 'px';
-// })
+    document.querySelector('.pg-wrapper').style.paddingRight = '0';
+});
